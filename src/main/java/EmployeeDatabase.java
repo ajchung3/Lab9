@@ -53,9 +53,11 @@ public class EmployeeDatabase {
      * @return int
      */
     public int countManagersAbove(final Employee employee) {
-        /*
-         * Implement this function
-         */
+        if (findManager(employee) == null) {
+            return 0;
+        }
+
+        return 1 + countManagersAbove(findManager(employee));
     }
 
     /**
